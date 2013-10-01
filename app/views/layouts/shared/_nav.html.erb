@@ -9,6 +9,7 @@
               <%= link_to 'Home', :root %>
             </li>
             <li class="<%= 'active' if current_page? projects_path %>">
+            <li class="<%= 'active' if current_page? @project %>">  
               <%= link_to 'Projects', :projects %>
             </li>
           </ul>
