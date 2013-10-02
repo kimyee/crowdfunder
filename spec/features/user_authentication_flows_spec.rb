@@ -58,6 +58,22 @@ describe "User Authentication", js: true do
       # ... no message saying "Account created" should appear
       page.should have_no_content("Account created")
       expect(page).to have_no_content("Account created")
+
+      # Should see "Try again" message on failure to register 
+      within(:css, ".alert") do
+        have_content("Try again")
+      end
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
