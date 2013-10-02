@@ -5,7 +5,7 @@ Crowdfunder::Application.routes.draw do
 
   resources :sessions
 
-  resources :users, :only => [:new, :create]
+  resources :users, :except => [:index]
 
   get "welcome/index"
 
