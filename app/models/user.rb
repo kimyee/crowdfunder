@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation #:title, :body
+   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
   has_many :projects
 
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :email
-  validates_uniqueness_of :email
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :email, presence: true
+  # validates :password, presence: true
+  validates_confirmation_of :password, :message => "should match confirmation", :if => :password 
+
 end
