@@ -11,7 +11,7 @@ require 'spec_helper'
 #   end
 # end
 
-describe "User Authentication" do
+describe "User Authentication", js: true do
   describe "when visiting the sign in page" do
     it "should successfully register a user" do
 
@@ -36,8 +36,8 @@ describe "User Authentication" do
       # After submitting the form, should be redirected to root
       expect(current_path).to eq(root_path)
       # While a message says "Account Created"
-      page.should have_content("Account created")
-      expect(page).to have_content("Account created")
+      
+      expect(page).to have_content("Account Created")
       # And the nav no longer has a link to Sign Up but Logout
       within(:css, '.navbar') do
         has_no_link?('Sign Up')
