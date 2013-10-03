@@ -14,7 +14,6 @@ require 'spec_helper'
 describe "User Authentication", js: true do
   describe "when visiting the sign in page" do
     it "should successfully register a user" do
-
       visit "/users/new"
       expect(current_path).to eq(new_user_path)
 
@@ -78,11 +77,9 @@ describe "User Authentication", js: true do
 
       fill_in "email", with: "a@b.com"
       fill_in "password", with: "invalid creds"
-      click_button "Login"
-
+      click_button "login-form-submit"
+      # sleep 20
       expect(current_path).to eq(sessions_path)
-
-      page.should have_content('Invalid')
       expect(page).to have_content('Invalid')
     end
 
@@ -90,8 +87,9 @@ describe "User Authentication", js: true do
       # Calling the helper method again
       user = setup_signed_in_user
 
-      visit '/'
+      puts user.inspect
 
+      visit '/'
       find('.navbar').click_link 'Logout'
 
       page.should have_content("Bye")

@@ -16,7 +16,8 @@
             <% if logged_in? %>
               <%= link_to 'Logout', logout_path, class: 'btn' %>
             <% else %>
-              <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
+              <%= link_to 'Log in', login_path, class: 'btn btn-success' %>
+               <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
             <% end %>
           </div>
       </div>

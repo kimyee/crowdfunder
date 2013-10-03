@@ -50,4 +50,5 @@ group :development, :test do
   gem "factory_girl_rails" 
   gem "capybara" # needed for our integration tests, which we'll talk about more later
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end

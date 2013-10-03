@@ -7,10 +7,8 @@ module SessionSupport
 
     fill_in "email", with: user.email
     fill_in "password", with: pass
-    click_button "Login"
+    click_button "login-form-submit"
     # Return our user when this method is called
     user
-
-    # No expectations are written because testing is not done inside of a helper method
   end
 end
